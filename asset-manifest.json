@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Expense-Tracker/static/css/main.83e52b0d.css",
+    "main.js": "/Expense-Tracker/static/js/main.364c7fd9.js",
+    "static/media/edit.png": "/Expense-Tracker/static/media/edit.21622d04ce8af31a7190.png",
+    "static/media/trash-bin.png": "/Expense-Tracker/static/media/trash-bin.e2d7a73c365ba8d4c545.png",
+    "index.html": "/Expense-Tracker/index.html",
+    "main.83e52b0d.css.map": "/Expense-Tracker/static/css/main.83e52b0d.css.map",
+    "main.364c7fd9.js.map": "/Expense-Tracker/static/js/main.364c7fd9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83e52b0d.css",
+    "static/js/main.364c7fd9.js"
+  ]
+}
