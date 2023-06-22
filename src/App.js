@@ -8,11 +8,14 @@ const reducer = (state, action) => {
   const { payload } = action;
   switch (action.type) {
     case "ADD_EXPENSE": {
+      localStorage.setItem("expenses",JSON.stringify([payload.expense, ...state.expenses]))
       return {
         expenses: [payload.expense, ...state.expenses]
+        
       };
     }
     case "REMOVE_EXPENSE": {
+      localStorage.setItem("expenses",JSON.stringify(state.expenses.filter((expense) => expense.id !== payload.id)))
       return {
         expenses: state.expenses.filter((expense) => expense.id !== payload.id)
       };
@@ -27,6 +30,8 @@ const reducer = (state, action) => {
         }
       })
       array[index] = payload.expense
+
+      localStorage.setItem("expenses",JSON.stringify(array))
       return {
         expenses: array
       };
@@ -39,11 +44,29 @@ const reducer = (state, action) => {
 
 
 function App() {
+
+  if(localStorage.getItem("expenses")==null){
+    var expenseList = []
+    localStorage.setItem("expenses",JSON.stringify(expenseList))
+    expenseList = JSON.parse(localStorage.getItem("expenses"))
+  }
+  else{
+    expenseList = JSON.parse(localStorage.getItem("expenses"))
+  }
+
+
+  
+
+  
+
+
   const expenseTextInput = useRef()
   const expenseAmountInput = useRef()
-  const [state, dispatch] = useReducer(reducer, { expenses: [] });
+  const [state, dispatch] = useReducer(reducer, { expenses: expenseList });
   const [toUpdate , setUpdate] = useState(false)
   const [editID , setID] = useState("")
+
+  
   
 
   const addExpense = (expense) => {

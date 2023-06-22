@@ -35,8 +35,10 @@ const ExpenseForm = ({ addExpense, toUpdate , editExpense, editID ,expenseTextIn
         text: expenseText,
         amount: expenseAmount,
         id: new Date().getTime(),
+        date: new Date().toLocaleDateString()
       };
       addExpense(expense);
+      
       clearInput();
       return;
     }

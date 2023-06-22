@@ -19,6 +19,7 @@ const Transaction = ({ expense, deleteExpense, index , changeExpenseToUpdate }) 
       }}
     >
       <div>{expense.text}</div>
+      <span>{expense.date}</span>
       <div className={styles.transactionOptions}>
         <div
           className={`${styles.amount} ${
